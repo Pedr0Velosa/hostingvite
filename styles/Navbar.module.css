@@ -1,0 +1,47 @@
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.list{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem 0;
+  gap:4rem;
+  text-transform: capitalize;
+  border-bottom: 2px solid black;
+}
+.logo{
+  display: none;
+}
+.links{
+  position: relative;
+}
+.links::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 70%;
+  bottom: -5px;
+  height: 2px;
+  background-color: brown;
+  transition: right 250ms ease-in;
+}
+.links[data-current="true"]::before, .links:hover::before{
+  right: 0;
+  transition: right 250ms ease-in;
+}
+@media (min-width:700px){
+  .logo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    margin-right: auto;
+  }
+}
+
+
